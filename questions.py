@@ -25,7 +25,11 @@ while True:
     else:
         print("Categoria no válida, intentá de nuevo.")
 
-word = random.choice(categories[option])
+# random.sample toma la lista de palabras de la categoria y devuelve
+# todas mezcladas al azar, sin repetir ninguna
+words = random.sample(categories[option], len(categories[option]))
+word = words[0]
+
 guessed = []
 attempts = 6
 score = 0
@@ -89,3 +93,6 @@ adivinar la palabra completa suma 6 puntos, y perder deja el puntaje en 0.'''
 Al inicio de cada partida, mostrar las categorías disponibles y permitir que el usuario
 elija una. Ayuda: utilizá un diccionario donde las claves sean los nombres de las
 categorías y los valores sean listas de palabras.'''
+
+'''Modificá el juego para que, al jugar varias rondas seguidas, no se repita la misma
+palabra. Investigá la función random.sample()'''
