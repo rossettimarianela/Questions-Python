@@ -1,25 +1,35 @@
 
 import random
 
-words = [
-"python",
-"programa",
-"variable",
-"funcion",
-"bucle",
-"cadena",
-"entero",
-"lista",
-]
+categories = {
+    "Programacion":["python","programa","variable","funcion","bucle","cadena","entero","lista"],
+    "Animales":["perro", "gato", "tortuga", "elefante", "orca", "delfin", "cangrejo", "yaguarete"],
+    "Colores": ["amarillo", "azul", "verde", "rosa", "naranja", "turquesa", "fucsia", "rojo", "magenta" ],
+    "Objetos": ["libro","mesa","cartera","sillon","tenedor","lampara","zapatilla","ventana"]
+}
 
-word = random.choice(words)
-guessed = []
-attempts = 6
-score = 0
+""" words = ["python","programa","variable","funcion","bucle","cadena","entero","lista",] """
 
 print()
 print("¡Bienvenido al Ahorcado!")
 print()
+
+# Menu de categorias
+print("Categorias disponibles: ")
+for category in categories:
+    print(f'- {category}')
+while True:
+    option = input("Elegí una categoria: ").capitalize()
+    if option in categories:
+        break
+    else:
+        print("Categoria no válida, intentá de nuevo.")
+
+word = random.choice(categories[option])
+guessed = []
+attempts = 6
+score = 0
+
 
 while attempts > 0:
     # Mostrar progreso: letras adivinadas y guiones para las que faltan
@@ -74,3 +84,8 @@ en la siguiente iteración '''
 '''Modificá el juego para que al final de la partida se muestre el puntaje del jugador. 
 El puntaje se calcula de la siguiente forma: cada letra incorrecta resta 1 punto,
 adivinar la palabra completa suma 6 puntos, y perder deja el puntaje en 0.'''
+
+'''Modificá el juego para que las palabras estén agrupadas por categoría.
+Al inicio de cada partida, mostrar las categorías disponibles y permitir que el usuario
+elija una. Ayuda: utilizá un diccionario donde las claves sean los nombres de las
+categorías y los valores sean listas de palabras.'''
