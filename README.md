@@ -7,4 +7,5 @@ Ejercicios y proyectos realizados en Python, cubriendo desde los fundamentos del
 
 ## Tecnologías
 - Python 3
+- Jupyter Notebook
 
